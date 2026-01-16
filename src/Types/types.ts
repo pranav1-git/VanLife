@@ -1,6 +1,14 @@
-import type { RouteObject } from "react-router-dom";
+enum VanTypes {
+  simple = "simple",
+  rugged = "rugged",
+  luxury = "luxury",
+}
 
-export interface CBR {
-  path: string;
-  element: RouteObject;
+export interface Vans {
+  id: string;
+  name: string;
+  price: number;
+  description: string;
+  imageUrl: string;
+  type: VanTypes;
 }
