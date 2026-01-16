@@ -4,6 +4,7 @@ import Home from "./Pages/Home.tsx";
 import About from "./Pages/About.tsx";
 import Vans, { loadVans } from "./Pages/Vans.tsx";
 import "../server.js";
+import PartVansPage, { getPartVanData } from "./Pages/PartVansPage.tsx";
 
 export default function App() {
   const router = createBrowserRouter([
@@ -19,6 +20,7 @@ export default function App() {
           hydrateFallbackElement: <h1>Loading......</h1>,
           loader: loadVans,
         },
+        { path: "vans/:id", element: <PartVansPage />, loader: getPartVanData },
       ],
     },
   ]);

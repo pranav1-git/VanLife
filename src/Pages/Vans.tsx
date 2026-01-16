@@ -7,15 +7,15 @@ export default function Vans() {
   console.log(VANSDATA);
   return (
     <>
-      <section className="vans-page px-5 py-5 min-h-full">
+      <section className="vans-page p-5 min-h-full">
         <h1 className="text-[26px] font-semibold mb-5">
           Explore our vans options
         </h1>
-        <div className="vansListBox flex flex-wrap gap-6">
+        <ul className="vansListBox flex flex-wrap gap-6">
           {VANSDATA.map((el) => (
             <EachVans key={el.id} {...el} />
           ))}
-        </div>
+        </ul>
       </section>
     </>
   );
