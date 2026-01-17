@@ -14,30 +14,6 @@ export default function MainNavigation() {
           <EachNavLink route="host" text="Host" />
           <EachNavLink route="about" text="About" />
           <EachNavLink route="vans" text="Vans" />
-          {/* <li>
-            <NavLink
-              to={"/host"}
-              className={({ isActive }) => (isActive ? ifActive : ifNotActive)}
-            >
-              Host
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              to={"/about"}
-              className={({ isActive }) => (isActive ? ifActive : ifNotActive)}
-            >
-              About
-            </NavLink>
-          </li>
-          <li style={{ color: "#4d4d4d" }}>
-            <NavLink
-              to={"/vans"}
-              className={({ isActive }) => (isActive ? ifActive : ifNotActive)}
-            >
-              Vans
-            </NavLink>
-          </li> */}
         </ul>
       </nav>
     </header>
