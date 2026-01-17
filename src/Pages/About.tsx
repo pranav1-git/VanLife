@@ -27,8 +27,7 @@ export default function About() {
           </div>
           <div className="exploreBox bg-button-orange-sec p-6 rounded mt-6">
             <h1 className="text-app-dark-sec font-bold text-[22px] mb-5">
-              Your Destination is waiting.
-              Your Van is ready.
+              Your Destination is waiting. Your Van is ready.
             </h1>
             <Button className="bg-app-dark-sec! text-white font-semibold px-4 py-2!">
               Explore our vans

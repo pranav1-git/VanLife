@@ -13,3 +13,8 @@ export default function Default() {
     </>
   );
 }
+
+// example of parent loader data can be used by the children
+// export function loader(): string {
+//   return "well the childrens can also access these things";
+// }

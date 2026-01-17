@@ -5,6 +5,8 @@ import About from "./Pages/About.tsx";
 import Vans, { loadVans } from "./Pages/Vans.tsx";
 import "../server.js";
 import PartVansPage, { getPartVanData } from "./Pages/PartVansPage.tsx";
+import Host from "./Pages/Host.tsx";
+import HostDasboard from "./Pages/HostDasboard.tsx";
 
 export default function App() {
   const router = createBrowserRouter([
@@ -13,6 +15,11 @@ export default function App() {
       element: <RootLayout />,
       children: [
         { index: true, element: <Home /> },
+        {
+          path: "host",
+          element: <Host />,
+          children: [{ index: true, element: <HostDasboard /> }],
+        },
         { path: "about", element: <About /> },
         {
           path: "vans",

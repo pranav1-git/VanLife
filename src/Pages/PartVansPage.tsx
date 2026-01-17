@@ -21,7 +21,7 @@ export default function PartVansPage() {
           </div>
           <VansTypeTag tag={type} />
           <div className="text-2xl font-semibold mt-3 mb-2">{name}</div>
-          <div className="mb-2">
+          <div className="mb-3">
             <span className="font-semibold text-xl">${price}</span>
             <span className="font-normal">/day</span>
           </div>
@@ -36,6 +36,6 @@ export async function getPartVanData({
   params,
 }: LoaderFunctionArgs): Promise<Vans> {
   const response = await fetch(`/api/vans/${params.id}`);
-  const { vans } = await response.json();
-  return vans;
+  const data = await response.json();
+  return data.vans;
 }

@@ -6,7 +6,7 @@ export default function EachVans(props: Vans) {
   return (
     <li className="eachBox">
       <Link to={`${props.id}`}>
-        <div className="imageBox w-60 h-60 rounded">
+        <div className="imageBox w-60 h-60">
           <img className="object-cover" src={props.imageUrl} alt={props.name} />
         </div>
         <div className="nameandpriceBox mt-3 mb-2 font-semibold text-[19px] flex justify-between">

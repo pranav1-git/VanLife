@@ -4,7 +4,6 @@ import EachVans from "../Components/EachVans.tsx";
 import { useLoaderData } from "react-router-dom";
 export default function Vans() {
   const VANSDATA: Vans[] = useLoaderData();
-  console.log(VANSDATA);
   return (
     <>
       <section className="vans-page p-5 min-h-full">
