@@ -2,8 +2,6 @@ import { NavLink } from "react-router-dom";
 import EachNavLink from "./EachNavLink";
 
 export default function MainNavigation() {
-  const ifActive = `text-app-dark-sec underline decoration-black`;
-  const ifNotActive = `hover:text-app-dark-sec hover:underline`;
   return (
     <header>
       <nav>
