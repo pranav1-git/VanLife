@@ -10,6 +10,8 @@ import HostDasboard from "./Pages/HostDasboard.tsx";
 import HostIncome from "./Pages/HostIncome.tsx";
 import HostVans from "./Pages/HostVans.tsx";
 import HostReviews from "./Pages/HostReviews.tsx";
+import HostPartVansPage from "./Pages/HostPartVansPage.tsx";
+import HostPartVanDetails from "./Pages/HostPartVanDetails.tsx";
 
 export default function App() {
   const router = createBrowserRouter([
@@ -26,7 +28,17 @@ export default function App() {
           children: [
             { index: true, element: <HostDasboard /> },
             { path: "income", element: <HostIncome /> },
-            { path: "vans", element: <HostVans /> },
+            {
+              path: "vans",
+              element: <HostVans />,
+            },
+            {
+              path: "vans/:id",
+              element: <HostPartVansPage />,
+              loader: getPartVanData,
+              id: "PartHostVans",
+              children: [{ index: true, element: <HostPartVanDetails /> }],
+            },
             { path: "reviews", element: <HostReviews /> },
           ],
         },

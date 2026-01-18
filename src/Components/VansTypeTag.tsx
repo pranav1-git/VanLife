@@ -9,7 +9,7 @@ export default function VansTypeTag({ tag }: VansTypeTagProps) {
   return (
     <div className={`vantypeBox flex items-center`}>
       <span
-        className={`${tagBgColor} text-white px-3 py-1 rounded capitalize font-medium text-sm`}
+        className={`${tagBgColor} text-white px-2 py-1 rounded capitalize font-medium text-sm`}
       >
         {tag}
       </span>
