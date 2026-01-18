@@ -27,7 +27,7 @@ export default function HostPartVansPage() {
         </div>
         <section className="detail-about-part-host-van-page">
           <TemplateNavbar>
-            <EachNavLink route="." text="Details" />
+            <EachNavLink route="." text="Details" end />
             <EachNavLink route="pricing" text="Pricing" />
             <EachNavLink route="photos" text="Photos" />
           </TemplateNavbar>

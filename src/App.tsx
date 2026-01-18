@@ -12,6 +12,8 @@ import HostVans from "./Pages/HostVans.tsx";
 import HostReviews from "./Pages/HostReviews.tsx";
 import HostPartVansPage from "./Pages/HostPartVansPage.tsx";
 import HostPartVanDetails from "./Pages/HostPartVanDetails.tsx";
+import HostPartVanPricing from "./Pages/HostPartVanPricing.tsx";
+import HostPartVanPhotos from "./Pages/HostPartVanPhotos.tsx";
 
 export default function App() {
   const router = createBrowserRouter([
@@ -37,7 +39,11 @@ export default function App() {
               element: <HostPartVansPage />,
               loader: getPartVanData,
               id: "PartHostVans",
-              children: [{ index: true, element: <HostPartVanDetails /> }],
+              children: [
+                { index: true, element: <HostPartVanDetails /> },
+                { path: "pricing", element: <HostPartVanPricing /> },
+                { path: "photos", element: <HostPartVanPhotos /> },
+              ],
             },
             { path: "reviews", element: <HostReviews /> },
           ],
