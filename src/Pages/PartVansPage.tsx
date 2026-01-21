@@ -11,7 +11,7 @@ export default function PartVansPage() {
   return (
     <>
       <section className="part-vans p-6">
-        <GoBack routeToGoBack="/vans" />
+        <GoBack routeToGoBack=".." relative="path" />
         <div className="van-data flex flex-col">
           <div className="imageBox min-w-52 min-h-52 max-w-96 max-h-96 mb-8">
             <img className="object-contain" src={imageUrl} alt={name} />

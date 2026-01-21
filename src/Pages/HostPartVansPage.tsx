@@ -1,4 +1,8 @@
-import { useLoaderData, Outlet } from "react-router-dom";
+import {
+  useLoaderData,
+  Outlet,
+  type LoaderFunctionArgs,
+} from "react-router-dom";
 import GoBack from "../Components/GoBack";
 import { type Vans } from "../Types/types";
 import VansTypeTag from "../Components/VansTypeTag";
@@ -7,20 +11,24 @@ import TemplateNavbar from "../Components/TemplateNavbar";
 
 export default function HostPartVansPage() {
   //   const { id } = useParams();
-  const { name, type, imageUrl, price }: Vans = useLoaderData();
+  const [PARTVANDATA]: Vans[] = useLoaderData();
   return (
     <section className="host-particular-vans-page p-5">
-      <GoBack routeToGoBack="/host/vans" />
+      <GoBack routeToGoBack=".." relative="path" />
       <div className="van-box bg-white p-5">
         <div className="van-img-type-title-price flex gap-6">
           <div className="imageBox w-38 h-38">
-            <img className="object-contain" src={imageUrl} alt={name} />
+            <img
+              className="object-contain"
+              src={PARTVANDATA.imageUrl}
+              alt={PARTVANDATA.name}
+            />
           </div>
           <div className="otherBox pt-3 font-semibold">
-            <VansTypeTag tag={`${type}`} />
-            <div className="van-name text-xl mt-3 mb-1">{name}</div>
+            <VansTypeTag tag={`${PARTVANDATA.type}`} />
+            <div className="van-name text-xl mt-3 mb-1">{PARTVANDATA.name}</div>
             <div className="text-lg">
-              <span>${price}</span>
+              <span>${PARTVANDATA.price}</span>
               <span className="font-normal">/day</span>
             </div>
           </div>
@@ -36,4 +44,10 @@ export default function HostPartVansPage() {
       </div>
     </section>
   );
+}
+
+export async function loader({ params }: LoaderFunctionArgs): Promise<Vans> {
+  const response = await fetch(`/api/host/vans/${params.id}`);
+  const data = await response.json();
+  return data.vans;
 }

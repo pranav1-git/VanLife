@@ -11,4 +11,5 @@ export interface Vans {
   description: string;
   imageUrl: string;
   type: VanTypes;
+  hostId?: string;
 }

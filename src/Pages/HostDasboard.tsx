@@ -1,8 +1,8 @@
-import { useRouteLoaderData } from "react-router-dom";
+import { useLoaderData } from "react-router-dom";
 import HostVansComponent from "../Components/HostVansComponent";
 
 export default function HostDasboard() {
-  const VANSLIST = useRouteLoaderData("host");
+  const VANSLIST = useLoaderData();
   return (
     <>
       <div className="host-dasboard">

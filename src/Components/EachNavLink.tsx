@@ -7,7 +7,7 @@ interface EachNavLinkProps {
 }
 
 export default function EachNavLink({ route, text, end }: EachNavLinkProps) {
-  const ifActive = `text-app-dark-sec underline decoration-black`;
+  const ifActive = `text-black underline decoration-black`;
   const ifNotActive = `hover:text-app-dark-sec hover:underline`;
   return (
     <li>

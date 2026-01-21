@@ -1,7 +1,7 @@
 import { useRouteLoaderData } from "react-router-dom";
 
 export default function HostPartVanPhotos() {
-  const PARTVANDATA = useRouteLoaderData("PartHostVans");
+  const [PARTVANDATA] = useRouteLoaderData("PartHostVans");
   return (
     <>
       <section className="host-part-van-photos">

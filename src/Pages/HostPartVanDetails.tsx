@@ -1,5 +1,4 @@
-import {  useRouteLoaderData } from "react-router-dom";
-
+import { useRouteLoaderData } from "react-router-dom";
 
 interface VanKeyAndValueProps {
   title: string;
@@ -16,7 +15,7 @@ function VanKeyAndValue({ title, value }: VanKeyAndValueProps) {
 }
 
 export default function HostPartVanDetails() {
-  const PARTVANDATA = useRouteLoaderData("PartHostVans");
+  const [PARTVANDATA] = useRouteLoaderData("PartHostVans");
   return (
     <>
       <section className="part-host-van-details">

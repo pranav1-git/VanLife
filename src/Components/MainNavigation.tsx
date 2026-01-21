@@ -7,7 +7,7 @@ export default function MainNavigation() {
       <nav>
         <ul className="flex h-20 items-center gap-5 px-5 font-medium text-app-light">
           <li className="mr-auto font-extrabold text-2xl">
-            <NavLink to={"/"} className="text-black">
+            <NavLink to={"."} className="text-black">
               #VANLIFE
             </NavLink>
           </li>
