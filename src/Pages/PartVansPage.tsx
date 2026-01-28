@@ -1,4 +1,8 @@
-import { useLoaderData, type LoaderFunctionArgs } from "react-router-dom";
+import {
+  useLoaderData,
+  useLocation,
+  type LoaderFunctionArgs,
+} from "react-router-dom";
 import type { Vans } from "../Types/types";
 import VansTypeTag from "../Components/VansTypeTag";
 import GoBack from "../Components/GoBack";
@@ -7,11 +11,16 @@ import GoBack from "../Components/GoBack";
 
 export default function PartVansPage() {
   const { name, imageUrl, type, description, price } = useLoaderData();
-  //   console.log(partVanData);
+  const { state } = useLocation();
+  // console.log(state);
   return (
     <>
       <section className="part-vans p-6">
-        <GoBack routeToGoBack=".." relative="path" />
+        <GoBack
+          routeToGoBack={`..`}
+          relative="path"
+          filterState={{ srch: state || "" }}
+        />
         <div className="van-data flex flex-col">
           <div className="imageBox min-w-52 min-h-52 max-w-96 max-h-96 mb-8">
             <img className="object-contain" src={imageUrl} alt={name} />

@@ -17,6 +17,7 @@ import HostPartVanDetails from "./Pages/HostPartVanDetails.tsx";
 import HostPartVanPricing from "./Pages/HostPartVanPricing.tsx";
 import HostPartVanPhotos from "./Pages/HostPartVanPhotos.tsx";
 import HostDasbhoardVanPage from "./Pages/HostDasbhoardVanPage.tsx";
+import Lassun from "./Lassun.tsx";
 
 export default function App() {
   const router = createBrowserRouter([
@@ -25,6 +26,7 @@ export default function App() {
       element: <RootLayout />,
       children: [
         { index: true, element: <Home /> },
+        { path: "characters", element: <Lassun /> },
         {
           path: "host",
           element: <Host />,
