@@ -4,11 +4,13 @@ import EachVans from "../Components/EachVans.tsx";
 
 import { useLoaderData, useSearchParams } from "react-router-dom";
 import FilterVans from "../Components/FilterVans.tsx";
+import { templateFetch } from "../../utils.ts";
 
 export default function Vans() {
   let VANSDATA: Vans[] = useLoaderData();
   const [searchParams, setSearchParams] = useSearchParams();
   const param = searchParams.getAll("type");
+
   // console.log(param);
 
   function handleSetSearchParams(type: string) {
@@ -44,8 +46,6 @@ export default function Vans() {
   );
 }
 
-export async function loadVans(): Promise<Vans[]> {
-  const response = await fetch("/api/vans");
-  const { vans } = await response.json();
-  return vans;
+export function loadVans() {
+  return templateFetch("/api/vans");
 }

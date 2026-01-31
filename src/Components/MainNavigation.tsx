@@ -14,6 +14,7 @@ export default function MainNavigation() {
           <EachNavLink route="host" text="Host" />
           <EachNavLink route="about" text="About" />
           <EachNavLink route="vans" text="Vans" />
+          <EachNavLink route="pranav" text="Pranav" />
         </ul>
       </nav>
     </header>

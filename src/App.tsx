@@ -18,19 +18,26 @@ import HostPartVanPricing from "./Pages/HostPartVanPricing.tsx";
 import HostPartVanPhotos from "./Pages/HostPartVanPhotos.tsx";
 import HostDasbhoardVanPage from "./Pages/HostDasbhoardVanPage.tsx";
 import Lassun from "./Lassun.tsx";
+import ErrorPage from "./Pages/ErrorPage.tsx";
+import HFBE from "./Components/HFBE.tsx";
 
 export default function App() {
   const router = createBrowserRouter([
     {
       path: "/",
       element: <RootLayout />,
+      errorElement: <ErrorPage />,
+      hydrateFallbackElement: <HFBE />,
       children: [
+        // { path: "*", element: <ErrorPage /> },
         { index: true, element: <Home /> },
         { path: "characters", element: <Lassun /> },
         {
           path: "host",
+
           element: <Host />,
           id: "host",
+
           children: [
             { index: true, loader: loadHostVans, element: <HostDasboard /> },
             { path: ":id", element: <HostDasbhoardVanPage /> },
@@ -58,7 +65,6 @@ export default function App() {
         {
           path: "vans",
           element: <Vans />,
-          hydrateFallbackElement: <h1>Loading......</h1>,
           loader: loadVans,
         },
         { path: "vans/:id", element: <PartVansPage />, loader: getPartVanData },

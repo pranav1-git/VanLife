@@ -8,6 +8,7 @@ import { type Vans } from "../Types/types";
 import VansTypeTag from "../Components/VansTypeTag";
 import EachNavLink from "../Components/EachNavLink";
 import TemplateNavbar from "../Components/TemplateNavbar";
+import { templateFetch } from "../../utils";
 
 export default function HostPartVansPage() {
   //   const { id } = useParams();
@@ -46,8 +47,6 @@ export default function HostPartVansPage() {
   );
 }
 
-export async function loader({ params }: LoaderFunctionArgs): Promise<Vans> {
-  const response = await fetch(`/api/host/vans/${params.id}`);
-  const data = await response.json();
-  return data.vans;
+export async function loader({ params }: LoaderFunctionArgs) {
+  return templateFetch(`/api/host/vans/${params.id}`);
 }
