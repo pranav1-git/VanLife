@@ -7,12 +7,15 @@ export default function ErrorPage() {
   const error = useRouteError();
   console.log(error);
   const ditch = isRouteErrorResponse(error);
-  let errMsg;
-  if (error instanceof Response) {
+  let errMsg: React.ReactNode | string;
+  if (error instanceof Error) {
+    errMsg = <h1>Error Occurred : {error.message}</h1>;
+  }
+  if (error instanceof Response && error.statusText) {
     errMsg = (
       <>
         <p className="mb-5 text-2xl">Error Status Code: {error.status}</p>
-        <h1>Error Occurred : {error.statusText}</h1>
+        <h1>Error Occurred :{error.statusText}</h1>
       </>
     );
   }
@@ -31,7 +34,12 @@ export default function ErrorPage() {
                 <h1>Error Occurred : {error.data}</h1>
               </>
             ) : (
-              errMsg || "Error !!!! : Internal Server Error"
+              errMsg || (
+                <h1>
+                  Looks like internal server error. Check Console to see the
+                  error. Or contact the owner of the site
+                </h1>
+              )
             )}
           </div>
           <Button className="bg-black!">

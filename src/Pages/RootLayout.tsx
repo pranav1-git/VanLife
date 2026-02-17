@@ -1,13 +1,13 @@
-import { Outlet} from "react-router-dom";
+import { Outlet } from "react-router-dom";
 import MainNavigation from "../Components/MainNavigation";
 import Footer from "../Components/Footer";
+import { useEffect } from "react";
 
 export default function Default() {
-  
   return (
     <>
       <MainNavigation />
-      <main className="flex-1">
+      <main className="flex-1 [&>section]:h-full">
         <Outlet />
       </main>
       <Footer />

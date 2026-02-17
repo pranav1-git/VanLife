@@ -1,5 +1,6 @@
 import { NavLink } from "react-router-dom";
 import EachNavLink from "./EachNavLink";
+import avatarIcon from "../assets/avatar-icon.png";
 
 export default function MainNavigation() {
   return (
@@ -14,7 +15,10 @@ export default function MainNavigation() {
           <EachNavLink route="host" text="Host" />
           <EachNavLink route="about" text="About" />
           <EachNavLink route="vans" text="Vans" />
-          <EachNavLink route="pranav" text="Pranav" />
+          <EachNavLink
+            route="login"
+            text={<img width={25} src={avatarIcon} alt={avatarIcon} />}
+          />
         </ul>
       </nav>
     </header>

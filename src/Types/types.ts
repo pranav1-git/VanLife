@@ -13,3 +13,8 @@ export interface Vans {
   type: VanTypes;
   hostId?: string;
 }
+
+export interface User {
+  email: FormDataEntryValue;
+  password: FormDataEntryValue;
+}

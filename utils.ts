@@ -1,4 +1,5 @@
-import type { Vans } from "./src/Types/types";
+import type { ActionFunctionArgs, FormMethod, HTMLFormMethod } from "react-router-dom";
+import type { Vans, User } from "./src/Types/types";
 
 export function getTagColor(tag: string): string {
   let tagAndColor = "";
@@ -18,12 +19,35 @@ export async function templateFetch(url: string): Promise<Vans[]> {
     const data = await response.json();
     return data.vans;
   } catch (error) {
-    console.log("well check your templateFetch function, something went wrong");
+    console.log(
+      "well check your templateFetch function or loader function for this particular route, something went wrong",
+    );
     let message = "Unknown Error";
     if (error instanceof Error) message = error.message;
     throw new Response(message, {
       status: 500,
-      statusText: message || "Something went wrong at templateFetch() function",
+      statusText: message,
+    });
+  }
+}
+
+export async function loginUser(cred: User, method: string) {
+  try {
+    const response = await fetch("/api/login", {
+      method: method,
+      body: JSON.stringify(cred),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    let message = "Unknown Error";
+    if (error instanceof Error) message = error.message;
+    throw new Response(message, {
+      status: 500,
+      statusText: message,
     });
   }
 }

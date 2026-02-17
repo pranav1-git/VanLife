@@ -5,7 +5,7 @@ import About from "./Pages/About.tsx";
 import Vans, { loadVans } from "./Pages/Vans.tsx";
 import "../server.js";
 import PartVansPage, { getPartVanData } from "./Pages/PartVansPage.tsx";
-import Host from "./Pages/Host.tsx";
+import Host, { loader as requireAuth } from "./Pages/Host.tsx";
 import HostDasboard from "./Pages/HostDasboard.tsx";
 import HostIncome from "./Pages/HostIncome.tsx";
 import HostVans, { loader as loadHostVans } from "./Pages/HostVans.tsx";
@@ -20,6 +20,12 @@ import HostDasbhoardVanPage from "./Pages/HostDasbhoardVanPage.tsx";
 import Lassun from "./Lassun.tsx";
 import ErrorPage from "./Pages/ErrorPage.tsx";
 import HFBE from "./Components/HFBE.tsx";
+import Login, {
+  loader as loginLoader,
+  action as loginAction,
+} from "./Pages/Login.tsx";
+import Signout from "./Pages/Signout.tsx";
+// import CheckAuthentication from "./Pages/CheckAuthentication.tsx";
 
 export default function App() {
   const router = createBrowserRouter([
@@ -34,10 +40,9 @@ export default function App() {
         { path: "characters", element: <Lassun /> },
         {
           path: "host",
-
           element: <Host />,
           id: "host",
-
+          loader: requireAuth,
           children: [
             { index: true, loader: loadHostVans, element: <HostDasboard /> },
             { path: ":id", element: <HostDasbhoardVanPage /> },
@@ -61,13 +66,23 @@ export default function App() {
             },
           ],
         },
-        { path: "about", element: <About /> },
+        {
+          path: "about",
+          element: <About />,
+        },
         {
           path: "vans",
           element: <Vans />,
           loader: loadVans,
         },
         { path: "vans/:id", element: <PartVansPage />, loader: getPartVanData },
+        {
+          path: "login",
+          element: <Login />,
+          loader: loginLoader,
+          action: loginAction,
+        },
+        { path: "signout", element: <Signout /> },
       ],
     },
   ]);

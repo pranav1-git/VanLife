@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 
 interface EachNavLinkProps {
   route: string;
-  text: string;
+  text: string | React.ReactNode;
   end?: boolean;
 }
 

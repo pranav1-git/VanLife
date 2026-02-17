@@ -3,7 +3,9 @@
 
 @theme {
   --font-Inter: "Inter", sans-serif;
+  --color-app-errorBox: #ffeded;
   --color-app: #fff7ed;
+
   --color-app-light: #4d4d4d;
   --color-app-medium: #ffead0;
   --color-app-for-simple: #e17654;
@@ -14,4 +16,5 @@
   --color-button-orange-third: #ffead0;
   --color-button-orange-fourth: #ffddb2;
   --color-app-dark-sec: #161616;
+  --color-app-border: #d1d5db;
 }
