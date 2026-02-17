@@ -3,7 +3,7 @@ import RootLayout from "./Pages/RootLayout.tsx";
 import Home from "./Pages/Home.tsx";
 import About from "./Pages/About.tsx";
 import Vans, { loadVans } from "./Pages/Vans.tsx";
-// import "../server.js";
+import "../server.js";
 import PartVansPage, { getPartVanData } from "./Pages/PartVansPage.tsx";
 import Host, { loader as requireAuth } from "./Pages/Host.tsx";
 import HostDasboard from "./Pages/HostDasboard.tsx";

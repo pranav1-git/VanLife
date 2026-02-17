@@ -1,7 +1,6 @@
 import { Outlet } from "react-router-dom";
 import MainNavigation from "../Components/MainNavigation";
 import Footer from "../Components/Footer";
-import { useEffect } from "react";
 
 export default function Default() {
   return (
