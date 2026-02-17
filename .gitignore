@@ -12,7 +12,6 @@ dist
 dist-ssr
 *.local
 .env
-./src/Pages/Testing.tsx
 
 # Editor directories and files
 .vscode/*
