@@ -12,6 +12,7 @@ export default function MainNavigation() {
               #VANLIFE
             </NavLink>
           </li>
+          <EachNavLink route="testing" text="Testing" />
           <EachNavLink route="host" text="Host" />
           <EachNavLink route="about" text="About" />
           <EachNavLink route="vans" text="Vans" />

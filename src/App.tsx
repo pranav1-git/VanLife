@@ -3,7 +3,7 @@ import RootLayout from "./Pages/RootLayout.tsx";
 import Home from "./Pages/Home.tsx";
 import About from "./Pages/About.tsx";
 import Vans, { loadVans } from "./Pages/Vans.tsx";
-import "../server.js";
+// import "../server.js";
 import PartVansPage, { getPartVanData } from "./Pages/PartVansPage.tsx";
 import Host, { loader as requireAuth } from "./Pages/Host.tsx";
 import HostDasboard from "./Pages/HostDasboard.tsx";
@@ -25,6 +25,7 @@ import Login, {
   action as loginAction,
 } from "./Pages/Login.tsx";
 import Signout from "./Pages/Signout.tsx";
+import Testing, { loader as testingLoader } from "./Pages/Testing.tsx";
 // import CheckAuthentication from "./Pages/CheckAuthentication.tsx";
 
 export default function App() {
@@ -83,6 +84,7 @@ export default function App() {
           action: loginAction,
         },
         { path: "signout", element: <Signout /> },
+        { path: "testing", element: <Testing />, loader: testingLoader },
       ],
     },
   ]);

@@ -1,4 +1,8 @@
-import type { ActionFunctionArgs, FormMethod, HTMLFormMethod } from "react-router-dom";
+import type {
+  ActionFunctionArgs,
+  FormMethod,
+  HTMLFormMethod,
+} from "react-router-dom";
 import type { Vans, User } from "./src/Types/types";
 
 export function getTagColor(tag: string): string {
