@@ -1,5 +1,5 @@
 import { type PropsWithChildren, type HtmlHTMLAttributes } from "react";
-import { Link, useSearchParams } from "react-router-dom";
+import { Link} from "react-router-dom";
 
 interface EachFilterProps
   extends PropsWithChildren, HtmlHTMLAttributes<HTMLButtonElement> {
