@@ -102,4 +102,4 @@ utils.ts        # Shared fetch helpers and utility functions
 
 ## Notes
 
-- The current repository has pre-existing lint/type issues unrelated to this README update.
+- The current repository has pre-existing lint/type issues unrelated to this README updates.
