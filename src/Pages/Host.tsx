@@ -1,7 +1,6 @@
 import {
   Outlet,
   redirect,
-  useLoaderData,
   type LoaderFunctionArgs,
 } from "react-router-dom";
 import HostNavbar from "../Components/HostNavbar";
