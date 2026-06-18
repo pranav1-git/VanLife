@@ -75,9 +75,7 @@ export async function action({ request }: ActionFunctionArgs) {
     const response = await loginUser(data, request.method);
     if (response && response.user) {
       localStorage.setItem("loggedIn", "true");
-      const res = redirect(`${redirectTo}`);
-      res.body = true;
-      throw res;
+       throw redirect(redirectTo);
     }
     // console.log(response);
     if (response && !response.ok) {
