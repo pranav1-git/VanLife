@@ -19,11 +19,7 @@ export async function loader({ request }: LoaderFunctionArgs) {
   console.log(url);
   const isUserLoggedIn = localStorage.getItem("loggedIn");
   if (!isUserLoggedIn) {
-    const response = redirect(
-      `/login?message=You must be logged in first&redirectTo=${url.pathname}`,
-    );
-    response.body = true;
-    throw response;
+    throw redirect(`/login?message=You must be logged in first&redirectTo=${url.pathname}`);
   }
   return "You are logged in babe";
 }
