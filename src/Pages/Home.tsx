@@ -14,7 +14,7 @@ export default function Home() {
             Add adventure to your life by joining the #vanlife movement. Rent
             the perfect van to make your perfect road trip.
           </p>
-          <Button onClick={()=>navigate('/vans')} className="px-12">Find Your Van</Button>
+          <Button onClick={()=>navigate('/vans')} className="px-12 cursor-pointer">Find Your Van</Button>
         </div>
       </section>
     </>
