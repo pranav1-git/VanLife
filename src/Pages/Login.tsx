@@ -55,9 +55,7 @@ export default function Login() {
 
 export function loader({ request }: LoaderFunctionArgs) {
   if (localStorage.getItem("loggedIn")) {
-    const res = redirect("/signout");
-    res.body = true;
-    throw res;
+    throw redirect("/signout");
   }
   const message = new URL(request.url).searchParams.get("message");
   return { message };
